@@ -37,7 +37,7 @@ namespace GeminiClient
         var split = responseHeader.IndexOf(" ");
         Status = int.Parse(responseHeader.Substring(0, split));
         StatusType = (GeminiStatusType)(Status - Status%10); //  Holy McHack!!!
-        Meta = responseHeader.Substring(split, responseHeader.Length-split).TrimRight()+"\r\n";
+        Meta = responseHeader.Substring(split, responseHeader.Length-split).Trim()+"\r\n";
         ResponseBody = responseBody;
     }
 
